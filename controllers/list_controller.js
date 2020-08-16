@@ -53,6 +53,8 @@ module.exports.createtask = function(req,res){
         console.log("error in adding new entry to the database");
         return res.redirect("back");
     }
+
+    req.flash("success","Task Created Succesfully");
     return res.redirect("back");
 });
    
@@ -68,6 +70,8 @@ module.exports.complete = function(req,res){
             console.log("error in deleting from database");
             return;
         }
+
+        req.flash("success","Task Completed Succesfully");
         return res.redirect("back");
     })
 
