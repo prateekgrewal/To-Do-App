@@ -1,0 +1,264 @@
+body{
+    background-color: lightgrey;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+/* the visible body of the app */
+#interface{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60vw;
+    margin-top: 50px;
+}
+/* to-do or not to-do heading */
+#heading{
+    font-size: 3rem;
+    /* color: rgb(218, 112, 112); */
+    color: dodgerblue;
+    font-family: 'Bangers', cursive;
+}
+/* entering details about the task */
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#description-input{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 8px 0;
+    padding-top: 3px;
+}
+
+#description-input:hover{
+    background-color: lightgray;
+}
+
+
+#description-input label{
+    font-size: 1.1rem;
+    /* width: 100%; */
+    padding: 1%;
+    padding-left: 30px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#description-input input{
+    /* width: 100%; */
+    height: 27px;
+    font-size: 1.3rem;
+    border: none;
+    padding-left: 30px;
+    font-family: 'Rokkitt', serif;
+    margin-bottom: -7px;
+} 
+
+#description-input input:hover{
+    background-color: lightgray;
+}
+
+input:focus , 
+select:focus {
+    outline: none;
+}
+
+#other-input{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    /* border-top: 1px solid black; */
+    border-bottom: 1px solid black;
+    font-size: 1.1rem;
+    padding: 8px 0;
+}
+
+#category{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    border-right:1px solid black;
+    height: 50px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#category select{
+    width: 90%;
+    padding-left: 30px;
+    border: none;
+    font-size: 1.3rem;
+    font-family: 'Rokkitt', serif;
+    /* height: 20px; */
+}
+
+#category span{
+    font-size: 1.1rem;
+    padding-left: 30px;
+
+}
+
+#duedate{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#duedate input{
+    width: 90%;
+    padding-left: 30px;
+    border: none;
+    font-size: 1.3rem;
+    font-family: 'Rokkitt', serif;
+}
+
+#duedate span{
+    font-size: 1.1rem;
+    padding-left: 30px;
+}
+
+#task-btn{
+    background-color: dodgerblue;
+    color: white;
+    padding: 5px;
+    font-size: 1.5rem;
+    border: none;
+    margin: 25px 0;
+    cursor: pointer;
+    font-family: 'Rokkitt', serif;
+    border-radius: 5%;
+}
+
+#task-btn:focus{
+    outline: none;
+}
+
+#task-btn i{
+    margin: auto 8px;
+}
+
+/* list of pending tasks */
+#pending-task-list{
+    width: 100%;
+}
+
+.task-block {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid black;
+    font-family: 'Rokkitt', serif;
+}
+
+.left-side{
+    display: flex;
+    align-items: center;
+}
+
+.complete-link{
+    font-size: 1.5rem;
+    color:grey;
+    margin: 10px;
+}
+
+.complete-link i:hover{
+    background-color: grey;
+    border-radius: 50%;
+}
+
+.task-details{
+    display: flex;
+    flex-direction: column;
+    margin: 5px ;
+}
+
+.decription-display{
+    font-size: 1.3rem;
+    margin: 3px 0;
+}
+
+.decription-display::first-letter{
+    text-transform: capitalize;
+}
+
+.duedate-display{
+    font-size: 1rem;
+    color: lightslategray;
+}
+
+.category-display{
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    width: 200px;
+    font-family: 'Indie Flower', cursive;
+    
+}
+
+/* classes to style the individyal categories of the task */
+
+.Personal{
+    color:white;
+    background-color:red ;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+    border-radius: 15%;
+}
+.Work{
+    color:white;
+    background-color: blue ;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+    border-radius: 15%;
+}
+.School{
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    background-color: slateblue;
+    padding: 3px;
+    border-radius: 15%;
+
+}
+.Shopping{
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    background-color: springgreen;
+    padding: 3px;
+    border-radius: 15%;
+}
+.Cleaning{
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    background-color: salmon;
+    padding: 3px;
+    border-radius: 15%;
+}
+.Other{
+    display: none;
+}
+

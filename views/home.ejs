@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> TO-DO or not TO-DO</title>
+        <!-- our main CSS file -->
+        <link rel="stylesheet" type="text/CSS" href="/CSS/home.css">
+        <!-- font awesome link -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- google fonts link -->
+        <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Indie+Flower&family=Rokkitt:wght@300&family=Ubuntu&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="interface">
+            <h1 id="heading"> TO-DO or not TO-DO</h1>
+            <!-- input area starts here -->
+            <form action="create-task" method="POST">
+                <div id="description-input">
+                    <label for="description"> Description </label>
+                    <input type="text" name="description" id="description" placeholder="what do you need to do?" required>
+                </div>
+                <div id="other-input">
+                    <!-- the drop down list -->
+                    <div id="category">
+                        <span>Category</span>
+                        <select name="category" id="category-dropdown" required>
+                            <option disabled selected hidden >choose a category</option>
+                            <option >Personal</option>
+                            <option>Work</option>
+                            <option>School</option>
+                            <option>Cleaning</option>
+                            <option>Shopping</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div id="duedate">
+                        <!-- date picker -->
+                        <span>Due Date</span>
+                        <input type="date" name="duedate" id="datepicker" required>
+                    </div>
+                </div>
+                <!-- add tasks button -->
+                <button type="submit" id="task-btn">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                    <span>Add Task</span> 
+                </button>
+            </form>
+            <div id="pending-task-list">
+                <!-- list of tasks is passed from the db in an array -->
+                <!-- loop to display all the existing tasks -->
+                <% for(let i of task_list){ %>
+                    <!-- individual blocks -->
+                    <div class = "task-block">
+                        <div class="left-side">
+                            <a href="complete-task/?id=<%=i.id%>" class="complete-link"> <i class="fa fa-circle-thin" aria-hidden="true"></i> </a>
+                            <div class = "task-details"> 
+                                <div class="decription-display"> <%= i.description %> </div>
+                                <div class="duedate-display"> 
+                                    <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                                    <%= i.duedate %> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="category-display">
+                            <div class= <%= i.category %> >
+                                <%= i.category %>
+                            </div> 
+                            
+                        </div>
+                    </div>
+                <%}%>
+            </div>
+        </div>
+        
+    </body>
+</html>
