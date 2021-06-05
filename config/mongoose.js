@@ -6,6 +6,7 @@ mongoose.connect(URL, {
     useUnifiedTopology:true,
     useNewUrlParser: true
 });
+
 // "mongodb://localhost/to-do-list-db"
 
 //verifying the connection
